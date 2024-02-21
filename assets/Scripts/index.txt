@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>KnifeSmash</title>
+
+  <!--http://www.html5rocks.com/en/mobile/mobifying/-->
+  <meta name="viewport"
+    content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true" />
+
+  <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- force webkit on 360 -->
+  <meta name="renderer" content="webkit" />
+  <meta name="force-rendering" content="webkit" />
+  <!-- force edge on IE -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- force full screen on some browser -->
+  <meta name="full-screen" content="yes" />
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="360-fullscreen" content="true" />
+
+  <!--fix fireball/issues/3568 -->
+  <!--<meta name="browsermode" content="application">-->
+  <meta name="x5-page-mode" content="app">
+
+  <!--<link rel="apple-touch-icon" href=".png" />-->
+  <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body>
+  <div id="GameDiv" cc_exact_fit_screen="true">
+    <div id="Cocos3dGameContainer">
+      <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
+    </div>
+  </div>
+
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK6D426J5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VK6D426J5N');
+  </script>
+  <script async data-ad-client="ca-pub-7647808421428026"
+    data-admob-interstitial-slot="ca-app-pub-2619097928645287/8237734663"
+    data-admob-rewarded-slot="ca-app-pub-2619097928645287/4945356910" data-page-url="pogame.io"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+    </script>
+
+  <script>window.adsbygoogle = window.adsbygoogle || [];
+    const adBreak = adConfig = function (o) {
+      adsbygoogle.push(o);
+    }
+    adConfig({ preloadAdBreaks: 'on' });
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyBpEVU2R46MGExFjSZ-lk91PpYz8VoQwts",
+      authDomain: "web-n123.firebaseapp.com",
+      projectId: "web-n123",
+      storageBucket: "web-n123.appspot.com",
+      messagingSenderId: "204101294259",
+      appId: "1:204101294259:web:d0e36ac7e9a60064fa38c6",
+      measurementId: "G-VK6D426J5N"
+    };
+    const firebaseApp = firebase.initializeApp(firebaseConfig);
+    function sendLogEvent(name, data) {
+      firebaseApp.analytics().logEvent(name, data);
+    }
+  </script>
+  <script>
+    window.myGameConfig = {
+      url_config_game: "https://config.namigame.online/game-config/config_game_n123.txt",
+      ads_inter_time: 180,
+      pogame_id: "cd8dcc7870494bd999b850c1d986dca1",
+      is_pogame: 1
+    };
+  </script>
+
+  <!-- Polyfills bundle. -->
+  <script src="src/polyfills.bundle.js" charset="utf-8"> </script>
+
+  <!-- SystemJS support. -->
+  <script src="src/system.bundle.js" charset="utf-8"> </script>
+
+  <!-- Import map -->
+  <script src="src/import-map.json" type="systemjs-importmap" charset="utf-8"> </script>
+
+  <script>
+    System.import('./index.js').catch(function (err) { console.error(err); })
+  </script>
+
+</body>
+
+</html>
